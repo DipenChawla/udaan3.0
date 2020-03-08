@@ -1,2 +1,5 @@
 *.bin
 out_base/
+*.pb
+*.pbtxt
+model/

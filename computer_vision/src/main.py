@@ -17,6 +17,5 @@ class ApiMain:
         req['store_name'] = tess_out
         req['invoice_date'] = tess_out
         req['image_name'] = image_path
-        
         print(PikaChu().publish_to_queue(req))
 
