@@ -18,19 +18,31 @@ class DateParser:
             return []
 
     def custom_date_parser_2(self, string_with_dates):
-        return [dt for _, dt in search_dates(string_with_dates)]
+        #return [dt for _, dt in search_dates(string_with_dates)]
+        fin_matches = []
+        try:
+            matches =  search_dates(string_with_dates)
+            for og, match in matches:
+                if (
+                    not int(match.strftime("%Y")) < 2018
+                    and not int(match.strftime("%Y")) > 2020
+                ):
+                    fin_matches.append(match)
+            return fin_matches
+        except:
+            return []
+
+
 
     def get_custom_date(self,string_with_dates):
         d1, d2 = (
             set(self.custom_date_parser_2(string_with_dates)),
             set(self.custom_date_parser_1(string_with_dates)),
         )
-        print(d1, d2)
         intersection_date = d1.intersection(d2)
         if not intersection_date:
             return d1
         return intersection_date
 
 # if __name__ == "__main__":
-#     DateParser().get_custom_date(string_with_dates)
-
+#     DateParser().get_custom_date(string_with_dates
