@@ -12,7 +12,7 @@ The basic architecture of our system is divided into three parts
 
 The architecture is summarised in the diagram below.
 
-TODO: Insert image link
+![Architecture](https://github.com/DipenChawla/udaan3.0/blob/master/img/architecture.png)
 
 There are two different EC2 servers hosting their own services, that is computer vision and natural text processes correspondingly. 
 
